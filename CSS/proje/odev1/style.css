@@ -1,0 +1,19 @@
+              .fixed-tabs-Whats,
+    .fixed-tabs-Whatsdetay {
+        position: fixed;
+        z-index: 100;
+        cursor: pointer;
+        right:6px;
+        background-color:#fff; padding:5px;
+        border:3px solid #fe2202;
+        padding-top:5px;
+    }
+    
+        
+    .fixed-tabs-Whats {
+        bottom: 30px
+    }
+     
+    .fixed-tabs-Whats img{
+        width:280px;
+      }
