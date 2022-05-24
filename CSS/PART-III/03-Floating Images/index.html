@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Images</title>
+    <style>
+        p {
+            border: 2px solid red;
+            padding: 5px;
+        }
+        img {
+            width: 300px;
+            float: left;
+            margin-right:10px;
+        }
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit assumenda praesentium blanditiis vitae. Repellat accusamus autem culpa sed ea eius impedit ab repudiandae quia, odit blanditiis consequuntur itaque nam libero.</p>
+
+    <p class="clearfix">
+        <img src="images/rowing.jpeg">
+        <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laborum tempore! Officia, iusto! Iste delectus voluptatum vero odit nostrum reiciendis, nihil qui, molestiae dolore nisi ex doloremque dolor non laborum.
+        </span>
+        <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laborum tempore! Officia, iusto! Iste delectus voluptatum vero odit nostrum reiciendis, nihil qui, molestiae dolore nisi ex doloremque dolor non laborum.
+        </span>
+        <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laborum tempore! Officia, iusto! Iste delectus voluptatum vero odit nostrum reiciendis, nihil qui, molestiae dolore nisi ex doloremque dolor non laborum.
+        </span>
+        <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laborum tempore! Officia, iusto! Iste delectus voluptatum vero odit nostrum reiciendis, nihil qui, molestiae dolore nisi ex doloremque dolor non laborum.
+        </span>
+        <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laborum tempore! Officia, iusto! Iste delectus voluptatum vero odit nostrum reiciendis, nihil qui, molestiae dolore nisi ex doloremque dolor non laborum.
+        </span>
+        <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, laborum tempore! Officia, iusto! Iste delectus voluptatum vero odit nostrum reiciendis, nihil qui, molestiae dolore nisi ex doloremque dolor non laborum.
+        </span>
+    </p>
+
+</body>
+</html>
