@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Position & Size</title>
+    <style>
+
+        body{
+            margin: 0;
+        }
+        #header{
+            position: relative;
+            /* background-image: linear-gradient(to bottom right, rgba(230,255,230,0.5),rgba(102,255,102,0.5)), url("../images/bg.jpg"); */
+            background-image: url(../images/bg.jpg);
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+        }
+        #header h1{
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            color: red;
+        }
+        .logo{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 70px;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div id="header">
+
+        <h1>Background Text</h1>
+        <img class="logo" src="../images/logo.png" alt="logo">
+        <!-- <div class="cover"></div> -->
+        
+    </div>
+</body>
+</html>
