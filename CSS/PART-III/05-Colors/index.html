@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colors</title>
+    <style>
+        div{
+            height: 150px;
+            border: 2px solid #888888;
+            margin-bottom: 10px;
+        }
+        #box1{
+            background: rgb(255, 0, 0);
+            opacity: .5;
+            transition: opacity .5s;
+        }
+        #box1:hover{
+            background: rgba(255, 0, 0, .8);
+            opacity: .8;
+        }
+        #box2{
+            background: rgb(0, 255, 0);
+            opacity: .7;
+        }
+        #box3{
+            background: rgb(0, 0, 255);
+            opacity: .3;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
 </body>
 </html>

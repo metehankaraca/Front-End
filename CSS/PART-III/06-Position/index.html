@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative & Absolute Position</title>
+    <style>
+
+        * { box-sizing: border-box;}
+        body { margin: 0; }
+        .box{
+            padding: 10px;
+            border: 5px solid #6D5B95;
+            margin-bottom: 10px;
+        }
+        .navbar { 
+            background-color: #feb236; 
+            position: relative;
+        }
+        .content{ 
+            background-color: #d64161; 
+        }
+        .footer{ 
+            background-color: #ff7b25; 
+            position: absolute;
+            bottom: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- static - relative - fixed - absolute - sticky -->
+
+    <div id="container">
+        <div class="box navbar">Navbar</div>
+        <div class="box content">Content</div>
+        <div class="box footer">Footer</div>
+    </div>
+
+</body>
+</html>
