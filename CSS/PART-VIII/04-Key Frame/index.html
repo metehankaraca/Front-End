@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Key Frame</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+        .box {
+            background-color: yellow;
+            width: 150px;
+            height: 150px;
+
+            position: relative;
+            top: 0;
+            left: 0;
+
+            animation: box 5s forwards 0.5s ease-in;
+        }
+        h1 {
+            position: relative;
+            animation: text_animation 2s ease-in;
+        }
+        
+        @keyframes box {
+            25% {
+                top: 100px;
+                left: 0;
+                background-color: blue;
+            }
+            50% {
+                top: 100px;
+                left: 100px;  
+                background-color: red;
+            }
+            75% {
+                top: 250px;
+                left: 100px;
+                background-color: green;
+            }
+            100%{
+                top: 250px;
+                left: 250px;
+                background-color: aqua;
+            }
+        }
+
+        @keyframes text_animation {
+            from {
+                top: -200px;
+            }
+            to {
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem, ipsum dolor.</h1>
+    <div class="box"></div>
+    
+</body>
+</html>
