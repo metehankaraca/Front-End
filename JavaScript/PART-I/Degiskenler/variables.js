@@ -1,0 +1,1 @@
+// Degisken Tanimlama 
