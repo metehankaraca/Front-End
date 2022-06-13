@@ -1,0 +1,45 @@
+body{
+    background-color: #E9ECEF;
+    margin-bottom: 30px;
+}
+h1{
+    text-align: center;
+    color:red;
+    margin: 20px 20px;
+}
+h2{
+    text-align: center;
+    color: red;
+    margin:20px 20px;
+}
+
+
+ul li:hover{
+    text-decoration: 2px black;
+    color: red;
+    font-weight: bold;
+    list-style: none;
+}
+
+ul li{
+    text-align: center;
+    list-style-position: inside;  
+    cursor: pointer;
+}
+
+
+.btn-danger{
+    margin: 20px;
+}
+.btn-danger a{
+    color: white;
+    margin: 10px;
+}
+.col{
+    margin-bottom:  10px;
+}
+img[alt="piyano"]{
+    margin: 22px;
+}
+
+
