@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* LOADING ANIMATION */
+.component:not(.component-loading) .component-loader {
+    display: none;
+}
+
+/* common */
+.component {
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px;
+    padding: 5px;
+}
+
+.form-inline {
+    margin-bottom: 10px;
+}
+
+.form-inline .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10px;
+}
+
+.form-inline label {
+    padding-left: 5px;
+}
+
+/* loader */
+.component-loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.component-loader-animation {
+    color: #000000;
+    font-size: 5px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    text-indent: -9999em;
+    animation: load4 1.3s infinite linear;
+    /* show in the center */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@keyframes load4 {
+    0%, 100% {
+        box-shadow: 0 -3em 0 0.2em,
+        2em -2em 0 0,
+        3em 0 0 -1em,
+        2em 2em 0 -1em,
+        0 3em 0 -1em,
+        -2em 2em 0 -1em,
+        -3em 0 0 -1em,
+        -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0,
+        2em -2em 0 0.2em,
+        3em 0 0 0,
+        2em 2em 0 -1em,
+        0 3em 0 -1em,
+        -2em 2em 0 -1em,
+        -3em 0 0 -1em,
+        -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em,
+        2em -2em 0 0,
+        3em 0 0 0.2em,
+        2em 2em 0 0,
+        0 3em 0 -1em,
+        -2em 2em 0 -1em,
+        -3em 0 0 -1em,
+        -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em,
+        2em -2em 0 -1em,
+        3em 0 0 0,
+        2em 2em 0 0.2em,
+        0 3em 0 0,
+        -2em 2em 0 -1em,
+        -3em 0 0 -1em,
+        -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em,
+        2em -2em 0 -1em,
+        3em 0 0 -1em,
+        2em 2em 0 0,
+        0 3em 0 0.2em,
+        -2em 2em 0 0,
+        -3em 0 0 -1em,
+        -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em,
+        2em -2em 0 -1em,
+        3em 0 0 -1em,
+        2em 2em 0 -1em,
+        0 3em 0 0,
+        -2em 2em 0 0.2em,
+        -3em 0 0 0,
+        -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0 -3em 0 -1em,
+        2em -2em 0 -1em,
+        3em 0 0 -1em,
+        2em 2em 0 -1em,
+        0 3em 0 -1em,
+        -2em 2em 0 0,
+        -3em 0 0 0.2em,
+        -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0 -3em 0 0,
+        2em -2em 0 -1em,
+        3em 0 0 -1em,
+        2em 2em 0 -1em,
+        0 3em 0 -1em,
+        -2em 2em 0 0,
+        -3em 0 0 0,
+        -2em -2em 0 0.2em;
+    }
+}
+    </style>
+</head>
+<body>
+    
+    <div class="component">
+        <div class="component-content">
+            <h4>Component: Get Github repo stars number</h4>
+    
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" required class="form-control" id="username" placeholder="Username:" value="facebook">
+                </div>
+                <div class="form-group">
+                    <label for="reponame">Repo name:</label>
+                    <input type="text" required class="form-control" id="reponame" placeholder="Repo name:" value="react">
+                </div>
+                <div class="form-group">
+                    <label>​</label>
+                    <button type="submit" class="btn btn-primary">Get number of stars</button>
+                </div>
+            </form>
+        </div>
+    
+    
+        <h5>
+            Stars number:
+            <span class="stars-number"></span>
+        </h5>
+    
+        <div class="component-loader">
+            <div class="component-loader-animation"></div>
+        </div>
+    </div>
+
+
+    <script>
+        const componentLoadingClass = "component-loading";
+        const componentEl = document.querySelector(".component");
+        const usernameEl = componentEl.querySelector("#username");
+        const reponameEl = componentEl.querySelector("#reponame");
+        const formEl = componentEl.querySelector("form");
+        const starsNumberEl = componentEl.querySelector(".stars-number");
+
+        function startLoadingAnimation() {
+        componentEl.classList.add(componentLoadingClass);
+        }
+
+        function stopLoadingAnimation() {
+        componentEl.classList.remove(componentLoadingClass);
+        }
+
+        // HELPERS
+
+        // EVENTS
+        formEl.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        starsNumberEl.innerHTML = "";
+        startLoadingAnimation();
+
+        try {
+            const starsNumber = await fetch(
+            `https://api.github.com/repos/${usernameEl.value}/${reponameEl.value}`
+            )
+            .then(res => res.json())
+            .then(data => data.stargazers_count);
+
+            starsNumberEl.innerHTML = starsNumber;
+        } catch (err) {
+            starsNumberEl.innerHTML = "Couldn't get the stars number";
+        } finally {
+            stopLoadingAnimation();
+        }
+        });
+    </script>
+</body>
+</html>
